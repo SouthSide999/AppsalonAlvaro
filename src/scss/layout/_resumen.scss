@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+
+.contenido-resumen {//para el resumen
+    p {
+        margin-bottom: 1rem;
+    }
+
+    span {//llaves
+        color: v.$azul;
+        font-weight: v.$bold;
+        font-size: 2.4rem;
+    }
+}
+.contenedor-servicio {//servicios elegidos
+    padding: 3rem 0;
+    border-bottom: 1px solid v.$gris;
+
+    &:last-of-type {//agrega separación al ultimo elemento
+        margin-bottom: v.$separación;
+    }
+}
+

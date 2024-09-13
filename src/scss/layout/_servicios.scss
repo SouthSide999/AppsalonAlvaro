@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.listado-servicios {
+    //responsivo y separación
+    display: grid;
+    gap: 2rem;
+
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    }
+
+    .servicio {
+        //estilo servicios citas
+        background-color: v.$blanco;
+        padding: 3rem;
+        border-radius: 1rem;
+        transition-property: transform;
+        transition-duration: 300ms;
+        text-align: center;
+
+        &.seleccionado {
+            background-color: v.$azul;
+
+            p {
+                color: v.$blanco;
+            }
+        }
+
+        &:hover {
+            //aumentar tamaño cuando el cursor pase por encima
+            transform: scale(1.1);
+            background-color: darken($color: v.$blanco, $amount: 20%);
+        }
+
+        p {
+            //párrafo de servicios
+            color: v.$negro;
+            margin: 0 0 calc(v.$separación / 4) 0;
+        }
+
+        .precio-servicio {
+            //a precio
+            color: v.$azul;
+            font-weight: v.$bold;
+            font-size: 3rem;
+            margin: 0;
+        }
+    }
+}
